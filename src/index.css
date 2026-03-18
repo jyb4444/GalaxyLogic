@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply m-0 bg-brand-page font-sans text-base leading-[1.7] text-brand-secondary antialiased;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply m-0 text-brand-text;
+  }
+
+  p {
+    @apply m-0;
+  }
+
+  a {
+    @apply text-brand-accent underline-offset-2 transition-colors duration-200;
+  }
+
+  a:hover {
+    @apply text-brand-accent-hover;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    @apply font-sans;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply border border-brand-border bg-white text-brand-text outline-none transition-colors duration-200;
+  }
+
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  button:focus-visible,
+  a:focus-visible {
+    @apply outline-none ring-2 ring-brand-accent ring-offset-2;
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply mx-auto max-w-content px-6 md:px-8 lg:px-10;
+  }
+
+  .section-space {
+    @apply py-14 md:py-20 lg:py-24;
+  }
+
+  .section-space-tight {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .hero-title {
+    @apply text-[40px] font-bold leading-[1.03] tracking-[-0.02em] text-brand-text md:text-[52px] lg:text-[56px];
+  }
+
+  .section-title {
+    @apply text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-brand-text md:text-[38px] lg:text-[40px];
+  }
+
+  .subsection-title {
+    @apply text-[24px] font-bold leading-[1.2] tracking-[-0.01em] text-brand-text md:text-[28px];
+  }
+
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.08em] text-brand-muted;
+  }
+
+  .surface-card {
+    @apply rounded-card border border-brand-border bg-brand-section shadow-subtle;
+  }
+}
