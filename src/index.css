@@ -74,15 +74,15 @@
   }
 
   .hero-title {
-    @apply text-[40px] font-bold leading-[1.03] tracking-[-0.02em] text-brand-text md:text-[52px] lg:text-[56px];
+    @apply text-[48px] font-bold leading-[1.03] tracking-[-0.02em] text-brand-text md:text-[62px] lg:text-[67px];
   }
 
   .section-title {
-    @apply text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-brand-text md:text-[38px] lg:text-[40px];
+    @apply text-[38px] font-bold leading-[1.1] tracking-[-0.02em] text-brand-text md:text-[46px] lg:text-[48px];
   }
 
   .subsection-title {
-    @apply text-[24px] font-bold leading-[1.2] tracking-[-0.01em] text-brand-text md:text-[28px];
+    @apply text-[29px] font-bold leading-[1.2] tracking-[-0.01em] text-brand-text md:text-[34px];
   }
 
   .eyebrow {
@@ -91,5 +91,33 @@
 
   .surface-card {
     @apply rounded-card border border-brand-border bg-brand-section shadow-subtle;
+  }
+
+  .mission-carousel-mask {
+    @apply overflow-hidden;
+  }
+
+  .mission-carousel-track {
+    @apply flex w-max items-center gap-10 px-5;
+    animation: mission-carousel-scroll 30s linear infinite;
+    will-change: transform;
+  }
+
+  .mission-carousel-mask:hover .mission-carousel-track {
+    animation-play-state: paused;
+  }
+
+  .mission-carousel-slide {
+    @apply flex h-24 w-44 shrink-0 items-center justify-center rounded-xl border border-brand-border bg-brand-page px-3;
+  }
+}
+
+@keyframes mission-carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }

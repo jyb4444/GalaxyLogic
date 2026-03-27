@@ -21,7 +21,7 @@ export function CTASection({
   primaryTo,
   secondaryLabel,
   secondaryTo,
-  imageSrc = '/images/placeholders/wide.svg',
+  imageSrc = '/images/about2.jpg',
   imageAlt = '',
 }: CTASectionProps) {
   return (
@@ -41,7 +41,7 @@ export function CTASection({
 
         {imageSrc ? (
           <div className="surface-card mt-10 overflow-hidden">
-            <img className="h-56 w-full object-cover md:h-72" src={imageSrc} alt={imageAlt} />
+            <img className="block w-full h-auto" src={imageSrc} alt={imageAlt} />
           </div>
         ) : null}
       </div>

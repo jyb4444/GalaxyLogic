@@ -1,23 +1,21 @@
 export const primaryNavLinks = [
-  { label: 'About', to: '/about' },
+  { label: 'About', to: '/' },
   { label: 'Services', to: '/services' },
 ]
 
 export const moreNavLinks = [
   { label: 'Contact', to: '/contact' },
-  { label: 'Insights', to: '/about#insights' },
-  { label: 'Careers', to: '/about#careers' },
 ]
 
 export const footerColumns = [
   {
     heading: 'Company',
     links: [
-      { label: 'About us', to: '/about' },
+      { label: 'About us', to: '/' },
       { label: 'Services', to: '/services' },
       { label: 'Contact', to: '/contact' },
-      { label: 'Careers', to: '/about#careers' },
-      { label: 'Resources', to: '/about#insights' },
+      { label: 'Careers', to: '/#careers' },
+      { label: 'Resources', to: '/#insights' },
     ],
   },
   {
@@ -25,8 +23,8 @@ export const footerColumns = [
     links: [
       { label: 'Documentation', to: '/services#faq' },
       { label: 'FAQ', to: '/services#faq' },
-      { label: 'Blog', to: '/about#insights' },
-      { label: 'Case studies', to: '/about#testimonials' },
+      { label: 'Blog', to: '/#insights' },
+      { label: 'Case studies', to: '/#testimonials' },
       { label: 'Connect', to: '/contact' },
     ],
   },
@@ -187,7 +185,7 @@ export const aboutTeam = [
 export const aboutStats = [
   {
     label: 'Years in business',
-    value: '12',
+    value: '6',
     caption: 'Continuous operation and growth',
   },
   {
@@ -305,29 +303,46 @@ export const servicesPartnershipCards = [
 
 export const servicesFaq = [
   {
-    question: 'How do engagements begin?',
+    question: "Do you sponsor work authorization for new graduates?",
     answer:
-      'We start with a consultation to understand your challenges, timeline, and goals. From there, we propose a scoped engagement with clear deliverables and milestones.',
+      "Yes. We work with new graduates on a range of work authorization pathways, including OPT, CPT, and H-1B, depending on the candidate’s current status, timing, and role alignment. During the initial consultation, we review your situation and explain what sponsorship support may look like at each stage so you have a clear understanding of the process.",
   },
   {
-    question: 'What engagement models do you offer?',
+    question:
+      "Can you support long-term immigration steps such as PERM, I-140, and green card processing?",
     answer:
-      'We support fixed-scope projects, time-and-material engagements, and retainer-based partnerships depending on your technical and business needs.',
+      "Yes. For eligible candidates, we can support long-term immigration planning, including PERM, I-140, and green card pathways. The exact timing and sequencing depend on your employment situation, performance, project needs, and legal process requirements, but we are able to work with candidates who are looking beyond short-term visa sponsorship and want a more stable long-term path in the United States.",
   },
   {
-    question: 'How do you handle security and compliance?',
+    question: "How long is the training program?",
     answer:
-      'Security is built into every engagement. We align with your compliance requirements and are experienced with HIPAA, SOC 2, and related frameworks.',
+      "Our standard training program is designed to take about one month. The goal is to help new graduates ramp up quickly with practical, job-relevant skills rather than staying in a long academic-style program. The training is structured to build both technical capability and confidence so candidates can move into interviews and client-facing opportunities as soon as they are ready.",
   },
   {
-    question: 'What is a typical project timeline?',
+    question: "What topics are covered during training?",
     answer:
-      'A focused assessment can take two to four weeks. Full modernization initiatives vary based on system complexity and organizational readiness.',
+      "Training is focused on real industry preparation. Depending on your track, it can include frontend development, backend development, cloud services, and modern engineering workflows used in production environments. We also cover practical topics such as collaboration within engineering teams, code quality expectations, development lifecycle practices, and the day-to-day workflow commonly seen in real client projects.",
   },
   {
-    question: 'Can you work with our existing team?',
+    question: "Do you provide mock interviews?",
     answer:
-      'Yes. We are designed to integrate with internal engineering and product teams while adapting to your operating model.',
+      "Yes. Mock interviews are part of our support process. We help candidates practice technical communication, answer common interview questions, improve clarity and structure, and build confidence in live interview settings. This includes feedback on both technical and behavioral performance so you can identify weak areas and improve before real interviews.",
+  },
+  {
+    question: "How quickly can I expect to receive an offer?",
+    answer:
+      "Offer timelines can vary based on market conditions, your background, interview readiness, and project demand. In faster cases, candidates may receive an offer within one day. In other cases, the process can take up to two months. We set expectations early, keep candidates updated throughout the process, and work to move qualified candidates forward as efficiently as possible.",
+  },
+  {
+    question:
+      "Is the program suitable for new graduates without U.S. industry experience?",
+    answer:
+      "Yes. The program is designed with new graduates in mind, including candidates who have strong academic backgrounds but limited U.S. industry experience. Our training and interview preparation are intended to bridge that gap by helping candidates understand employer expectations, real-world project workflows, and the technical depth needed to compete in the U.S. job market.",
+  },
+  {
+    question: "Will I learn real engineering workflow instead of just theory?",
+    answer:
+      "Yes. A major focus of the program is practical execution. We emphasize real-world engineering workflow, including how modern teams build, test, deploy, and collaborate on software. The objective is not only to improve your technical stack, but also to help you operate like an engineer in an actual production environment.",
   },
 ]
 

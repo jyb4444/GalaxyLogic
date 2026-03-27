@@ -1,106 +1,71 @@
-import { Globe, Linkedin, X } from 'lucide-react'
+import { Bike, PersonStanding, Rocket } from 'lucide-react'
 import { CTASection } from '../components/sections/CTASection'
-import { PrimaryButton } from '../components/ui/PrimaryButton'
-import { SecondaryButton } from '../components/ui/SecondaryButton'
-import { SectionIntro } from '../components/ui/SectionIntro'
 import { StatCard } from '../components/ui/StatCard'
-import { TestimonialCard } from '../components/ui/TestimonialCard'
 import {
   aboutStats,
-  aboutTeam,
-  aboutTestimonials,
 } from '../data/siteData'
 
 export function About() {
+  const missionItems = [
+    {
+      icon: PersonStanding,
+      text: 'Empower students with practical skills, insider industry knowledge, and career-building strategies.',
+    },
+    {
+      icon: Bike,
+      text: 'Build a career-focused community where students can connect, learn, and grow together.',
+    },
+    {
+      icon: Rocket,
+      text: 'Deliver real results, helping students break into top-tier companies and thrive in competitive job markets.',
+    },
+  ]
+  const missionOfferImages = [
+    { src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/1.png', alt: 'EY offer' },
+    { src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/2.png', alt: 'PWC offer' },
+    { src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/3.png', alt: 'Amazon offer' },
+    {
+      src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/4.png',
+      alt: 'Capital One offer',
+    },
+    { src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/5.png', alt: 'MTA offer' },
+    {
+      src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/6.png',
+      alt: 'Deloitte offer',
+    },
+    { src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/7.png', alt: 'Offer 7' },
+    { src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/8.png', alt: 'Offer 8' },
+    {
+      src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/9.png',
+      alt: 'Grady offer',
+    },
+    { src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/10.png', alt: 'IBM offer' },
+    { src: 'https://energyjuiceconsulting.com/wp-content/uploads/2025/04/11.png', alt: 'Offer 11' },
+  ]
+
   return (
     <>
       <section className="bg-brand-tint section-space text-center">
         <div className="site-container">
           <div className="mx-auto max-w-3xl space-y-5">
-            <p className="eyebrow">Expertise</p>
             <h1 className="hero-title">Who we are</h1>
             <p className="text-base text-brand-secondary md:text-lg">
-              GalaxyLogic LLC builds software systems that matter. We partner with organizations
-              to solve complex technical challenges.
+              Founded by engineers, GalaxyLogic LLC builds software systems that matter. We
+              partner with organizations to solve complex challenges with reliable, scalable
+              delivery.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
-              <PrimaryButton to="/services">Services</PrimaryButton>
-              <SecondaryButton to="/contact">Contact</SecondaryButton>
+            <div className="pt-3">
+              <img
+                className="mx-auto h-auto w-full max-w-3xl rounded-2xl object-cover"
+                src="/images/about.jpg"
+                alt="GalaxyLogic team"
+              />
             </div>
           </div>
         </div>
       </section>
 
       <section className="section-space bg-brand-page">
-        <div className="site-container space-y-10 text-center">
-          <div className="mx-auto max-w-3xl space-y-5">
-            <p className="eyebrow">Foundation</p>
-            <h2 className="section-title">Built on technical depth and client trust</h2>
-            <p className="text-base text-brand-secondary md:text-lg">
-              GalaxyLogic LLC was founded by engineers who understood that great software requires
-              more than code. We started with a simple conviction: organizations deserve partners
-              who listen, understand their constraints, and deliver systems that work reliably at
-              scale.
-            </p>
-            <div className="flex justify-center">
-              <SecondaryButton to="/contact">Learn</SecondaryButton>
-            </div>
-          </div>
-          <div className="surface-card overflow-hidden">
-            <img
-              className="h-[360px] w-full object-cover md:h-[460px]"
-              src="/images/placeholders/wide.svg"
-              alt="GalaxyLogic team workshop"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space bg-brand-page" id="careers">
-        <div className="site-container space-y-12">
-          <SectionIntro
-            centered
-            eyebrow="People"
-            title="The team behind the work"
-            description="We hire engineers and architects who care about solving real problems."
-          />
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-            {aboutTeam.map((member) => (
-              <article className="space-y-4 text-center" key={member.name}>
-                <div className="mx-auto h-16 w-16 overflow-hidden rounded-full bg-brand-border">
-                  <img
-                    className="h-full w-full object-cover"
-                    src="/images/placeholders/avatar.svg"
-                    alt=""
-                  />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-semibold text-brand-text">{member.name}</h3>
-                  <p className="text-base text-brand-secondary">{member.role}</p>
-                  <p className="text-base text-brand-secondary">{member.bio}</p>
-                </div>
-                <div className="flex items-center justify-center gap-3 text-brand-text">
-                  <Linkedin className="h-4 w-4" />
-                  <X className="h-4 w-4" />
-                  <Globe className="h-4 w-4" />
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mx-auto max-w-2xl space-y-4 text-center">
-            <h3 className="subsection-title">We're hiring</h3>
-            <p className="text-base text-brand-secondary md:text-lg">
-              Join a team of engineers building software that solves real problems for real
-              organizations.
-            </p>
-            <SecondaryButton to="/contact">View careers</SecondaryButton>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space bg-brand-tint">
         <div className="site-container">
           <div className="grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-10">
             <div className="space-y-5">
@@ -110,7 +75,6 @@ export function About() {
                 We measure success by the systems we build and the partnerships we maintain. Our
                 clients return because we deliver.
               </p>
-              <SecondaryButton to="/contact">Learn</SecondaryButton>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 md:gap-5">
@@ -122,24 +86,51 @@ export function About() {
         </div>
       </section>
 
-      <section className="section-space bg-brand-page" id="testimonials">
-        <div className="site-container space-y-10">
-          <SectionIntro
-            eyebrow="Partnership that delivers"
-            title="What clients say"
-          />
+      <section className="section-space bg-brand-tint" id="testimonials">
+        <div className="site-container">
+          <div className="surface-card mx-auto max-w-6xl bg-brand-page px-4 py-8 md:px-8 md:py-10 lg:px-10">
+            <h2 className="text-[53px] font-bold tracking-tight text-brand-accent md:text-[77px]">
+              Our Mission
+            </h2>
 
-          <div className="grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-6">
-            {aboutTestimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.name} {...testimonial} />
-            ))}
+            <div className="mt-6 divide-y divide-brand-border md:mt-8">
+              {missionItems.map((item) => {
+                const Icon = item.icon
+
+                return (
+                  <div className="grid items-center gap-4 py-6 md:grid-cols-[minmax(220px,340px)_1fr] md:gap-6 md:py-8" key={item.text}>
+                    <div className="flex h-32 items-center justify-center rounded-3xl border border-brand-border bg-brand-section md:h-36">
+                      <Icon className="h-16 w-16 text-brand-accent" strokeWidth={1.6} />
+                    </div>
+                    <p className="text-lg leading-relaxed text-brand-secondary md:text-3xl/[1.35]">
+                      {item.text}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+
+            <div
+              className="mission-carousel-mask mt-8 rounded-2xl border border-brand-border bg-brand-section py-4"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Student offers carousel"
+            >
+              <div className="mission-carousel-track" aria-live="off">
+                {[...missionOfferImages, ...missionOfferImages].map((item, index) => (
+                  <figure className="mission-carousel-slide" key={`${item.src}-${index}`}>
+                    <img className="h-16 w-auto object-contain md:h-20" src={item.src} alt={item.alt} />
+                  </figure>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <CTASection
-        title="Ready to talk about your systems"
-        description="Let's discuss what your organization needs and how we can help you get there."
+        title="Are you ready to discuss your career plan?"
+        description="Let's discuss what you need and how we can help you get there."
         primaryLabel="Contact"
         primaryTo="/contact"
         secondaryLabel="Services"

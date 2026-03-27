@@ -1,76 +1,66 @@
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { moreNavLinks, primaryNavLinks } from '../../data/siteData'
 import { cn } from '../../lib/cn'
-import { PrimaryButton } from '../ui/PrimaryButton'
 
 function navLinkClass(isActive: boolean) {
   return cn(
-    'text-sm font-medium no-underline transition-colors duration-200',
-    isActive ? 'text-brand-text' : 'text-brand-secondary hover:text-brand-text',
+    'inline-flex origin-center items-center rounded-lg px-3 py-2 text-lg font-semibold no-underline transition-all duration-200 ease-out',
+    isActive
+      ? 'scale-105 bg-brand-section text-brand-accent shadow-subtle'
+      : 'text-brand-secondary hover:scale-105 hover:bg-white/70 hover:text-brand-text',
   )
 }
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [moreOpen, setMoreOpen] = useState(false)
   const closeMenus = () => {
     setMobileOpen(false)
-    setMoreOpen(false)
   }
 
   return (
     <header className="sticky top-0 z-30 border-b border-brand-border bg-brand-tint/95 backdrop-blur-sm">
       <div className="site-container">
         <div className="hidden h-20 items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
-          <nav aria-label="Primary navigation" className="relative flex items-center gap-6">
+          <Link className="text-3xl font-semibold italic text-brand-text no-underline" to="/">
+            GalaxyLogic
+          </Link>
+          <nav aria-label="Primary navigation" className="relative flex items-center gap-8">
             {primaryNavLinks.map((link) => (
               <NavLink
                 className={({ isActive }) => navLinkClass(isActive)}
                 key={link.to}
                 to={link.to}
+                end={link.to === '/'}
                 onClick={closeMenus}
               >
                 {link.label}
               </NavLink>
             ))}
-            <div className="relative">
-              <button
-                className="inline-flex items-center gap-1 text-sm font-medium text-brand-secondary transition-colors hover:text-brand-text"
-                type="button"
-                onClick={() => setMoreOpen((value) => !value)}
-                aria-expanded={moreOpen}
-              >
-                More
-                <ChevronDown className="h-4 w-4" aria-hidden="true" />
-              </button>
-              {moreOpen ? (
-                <div className="surface-card absolute left-0 top-9 w-48 overflow-hidden py-2">
-                  {moreNavLinks.map((link) => (
-                    <Link
-                      className="block px-4 py-2 text-sm font-medium text-brand-secondary no-underline transition-colors hover:bg-brand-page hover:text-brand-text"
-                      key={link.to}
-                      to={link.to}
-                      onClick={closeMenus}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              ) : null}
-            </div>
+            {moreNavLinks.map((link) => (
+              link.to.includes('#') ? (
+                <Link
+                  className="inline-flex origin-center items-center rounded-lg px-3 py-2 text-lg font-semibold text-brand-secondary no-underline transition-all duration-200 ease-out hover:scale-105 hover:bg-white/70 hover:text-brand-text"
+                  key={link.to}
+                  to={link.to}
+                  onClick={closeMenus}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <NavLink
+                  className={({ isActive }) => navLinkClass(isActive)}
+                  key={link.to}
+                  to={link.to}
+                  end
+                  onClick={closeMenus}
+                >
+                  {link.label}
+                </NavLink>
+              )
+            ))}
           </nav>
-
-          <Link className="text-3xl font-semibold italic text-brand-text no-underline" to="/">
-            GalaxyLogic
-          </Link>
-
-          <div className="flex justify-end">
-            <PrimaryButton className="h-9 px-4 text-[13px]" to="/contact" onClick={closeMenus}>
-              Menu
-            </PrimaryButton>
-          </div>
         </div>
 
         <div className="flex h-16 items-center justify-between md:hidden">
@@ -90,10 +80,6 @@ export function SiteHeader() {
           >
             GalaxyLogic
           </Link>
-
-          <PrimaryButton className="h-8 px-3 text-xs" to="/contact" onClick={closeMenus}>
-            Contact
-          </PrimaryButton>
         </div>
       </div>
 
@@ -118,14 +104,33 @@ export function SiteHeader() {
               </NavLink>
             ))}
             {moreNavLinks.map((link) => (
-              <Link
-                className="rounded-lg px-3 py-2 text-sm font-semibold text-brand-secondary no-underline hover:bg-white hover:text-brand-text"
-                key={link.to}
-                to={link.to}
-                onClick={closeMenus}
-              >
-                {link.label}
-              </Link>
+              link.to.includes('#') ? (
+                <Link
+                  className="rounded-lg px-3 py-2 text-sm font-semibold text-brand-secondary no-underline hover:bg-white hover:text-brand-text"
+                  key={link.to}
+                  to={link.to}
+                  onClick={closeMenus}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <NavLink
+                  className={({ isActive }) =>
+                    cn(
+                      'rounded-lg px-3 py-2 text-sm font-semibold no-underline',
+                      isActive
+                        ? 'bg-brand-tint text-brand-text'
+                        : 'text-brand-secondary hover:bg-white hover:text-brand-text',
+                    )
+                  }
+                  key={link.to}
+                  to={link.to}
+                  end
+                  onClick={closeMenus}
+                >
+                  {link.label}
+                </NavLink>
+              )
             ))}
           </nav>
         </div>

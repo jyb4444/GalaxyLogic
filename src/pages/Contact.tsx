@@ -54,15 +54,10 @@ export function Contact() {
       <section className="bg-brand-tint section-space text-center">
         <div className="site-container">
           <div className="mx-auto max-w-3xl space-y-5">
-            <p className="eyebrow">Connect</p>
             <h1 className="hero-title">Let's talk</h1>
             <p className="text-base text-brand-secondary md:text-lg">
               Reach out to discuss your software challenges and explore how we can help.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
-              <PrimaryButton to="/contact">Contact</PrimaryButton>
-              <SecondaryButton to="/services">Learn</SecondaryButton>
-            </div>
           </div>
         </div>
       </section>
@@ -113,38 +108,6 @@ export function Contact() {
                 <input className="h-11 w-full rounded-lg px-3" id="phone" name="phone" />
               </FormField>
             </div>
-
-            <FormField htmlFor="topic" label="What's this about?">
-              <select className="h-11 w-full rounded-lg px-3" id="topic" name="topic" defaultValue="">
-                <option disabled value="">
-                  Select one...
-                </option>
-                <option>Application modernization</option>
-                <option>Systems integration</option>
-                <option>Technical evaluation</option>
-                <option>Engineering partnership</option>
-              </select>
-            </FormField>
-
-            <fieldset className="space-y-3">
-              <legend className="text-sm font-semibold text-brand-text">Which best describes you?</legend>
-              <div className="grid gap-2 md:grid-cols-2">
-                {personaOptions.map((option) => (
-                  <label
-                    className="inline-flex items-center gap-2 text-sm text-brand-secondary"
-                    key={option}
-                  >
-                    <input
-                      className="h-4 w-4 rounded border-brand-border accent-brand-accent"
-                      type="checkbox"
-                      name="persona"
-                      value={option}
-                    />
-                    {option}
-                  </label>
-                ))}
-              </div>
-            </fieldset>
 
             <FormField htmlFor="message" label="Message">
               <textarea
@@ -207,25 +170,6 @@ export function Contact() {
               src="/images/placeholders/map.svg"
               alt="Map showing where GalaxyLogic works"
             />
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space bg-brand-page">
-        <div className="site-container space-y-8">
-          <SectionIntro
-            title="Questions"
-            description="Common questions about working with us and our approach to consulting."
-          />
-
-          <FAQAccordion items={contactFaq} />
-
-          <div className="space-y-4 pt-4">
-            <h3 className="subsection-title">Still have questions?</h3>
-            <p className="text-base text-brand-secondary md:text-lg">
-              Reach out directly and we'll address your specific needs.
-            </p>
-            <SecondaryButton to="/contact">Contact</SecondaryButton>
           </div>
         </div>
       </section>
