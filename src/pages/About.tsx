@@ -89,7 +89,7 @@ export function About() {
       <section className="section-space bg-brand-tint" id="testimonials">
         <div className="site-container">
           <div className="surface-card mx-auto max-w-6xl bg-brand-page px-4 py-8 md:px-8 md:py-10 lg:px-10">
-            <h2 className="text-[53px] font-bold tracking-tight text-brand-accent md:text-[77px]">
+            <h2 className="text-[48px] font-bold tracking-tight text-brand-accent md:text-[70px]">
               Our Mission
             </h2>
 
@@ -102,7 +102,7 @@ export function About() {
                     <div className="flex h-32 items-center justify-center rounded-3xl border border-brand-border bg-brand-section md:h-36">
                       <Icon className="h-16 w-16 text-brand-accent" strokeWidth={1.6} />
                     </div>
-                    <p className="text-lg leading-relaxed text-brand-secondary md:text-3xl/[1.35]">
+                    <p className="text-base leading-relaxed text-brand-secondary md:text-2xl/[1.35]">
                       {item.text}
                     </p>
                   </div>

@@ -11,7 +11,7 @@ export function StatCard({ label, value, caption, className }: StatCardProps) {
   return (
     <article className={cn('surface-card space-y-4 p-6', className)}>
       <p className="text-lg font-semibold text-brand-text">{label}</p>
-      <p className="text-[62px] font-bold leading-none tracking-[-0.03em] text-brand-text">
+      <p className="text-[57px] font-bold leading-none tracking-[-0.03em] text-brand-text">
         {value}
       </p>
       <div className="border-t border-brand-border pt-3">

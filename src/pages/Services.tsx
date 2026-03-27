@@ -190,7 +190,7 @@ export function Services() {
                       <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-tint text-brand-accent transition-colors duration-300 group-hover:bg-brand-accent group-hover:text-white">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </span>
-                      <h3 className="text-[36px] font-semibold leading-[1.1] tracking-[-0.01em] text-brand-text">
+                      <h3 className="text-[33px] font-semibold leading-[1.1] tracking-[-0.01em] text-brand-text">
                         {card.title}
                       </h3>
                     </div>

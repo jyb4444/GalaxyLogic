@@ -4,13 +4,10 @@ import {
   Phone,
   MapPin,
 } from 'lucide-react'
-import { FAQAccordion } from '../components/ui/FAQAccordion'
 import { ContactMethodCard } from '../components/ui/ContactMethodCard'
 import { FormField } from '../components/ui/FormField'
 import { PrimaryButton } from '../components/ui/PrimaryButton'
-import { SecondaryButton } from '../components/ui/SecondaryButton'
 import { SectionIntro } from '../components/ui/SectionIntro'
-import { contactFaq } from '../data/siteData'
 
 const contactMethods = [
   {
@@ -37,15 +34,6 @@ const contactMethods = [
     description: 'Visit us or schedule time at our headquarters.',
     value: 'San Francisco, California 94105 US',
   },
-]
-
-const personaOptions = [
-  'Operations leader',
-  'Product owner',
-  'Technology decision-maker',
-  'Engineering manager',
-  'Executive',
-  'Other',
 ]
 
 export function Contact() {
