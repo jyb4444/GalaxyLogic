@@ -25,7 +25,7 @@ export function TestimonialCard({
   return (
     <article className={cn('surface-card space-y-5 p-5', className)}>
       {logoText ? (
-        <p className="text-sm font-semibold text-brand-text">{logoText}</p>
+        <img className="h-8 w-auto" src="/images/logo.svg" alt="GalaxyLogic logo" />
       ) : (
         <div className="flex items-center gap-1 text-brand-text" aria-label="5 out of 5 stars">
           {Array.from({ length: 5 }).map((_, index) => (

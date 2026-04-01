@@ -14,8 +14,8 @@ export const footerColumns = [
       { label: 'About us', to: '/' },
       { label: 'Services', to: '/services' },
       { label: 'Contact', to: '/contact' },
-      { label: 'Careers', to: '/#careers' },
-      { label: 'Resources', to: '/#insights' },
+      { label: 'Careers', to: '/contact' },
+      { label: 'Resources', to: '/services#faq' },
     ],
   },
   {
@@ -23,7 +23,7 @@ export const footerColumns = [
     links: [
       { label: 'Documentation', to: '/services#faq' },
       { label: 'FAQ', to: '/services#faq' },
-      { label: 'Blog', to: '/#insights' },
+      { label: 'Blog', to: '/services#faq' },
       { label: 'Case studies', to: '/#testimonials' },
       { label: 'Connect', to: '/contact' },
     ],
@@ -33,7 +33,7 @@ export const footerColumns = [
 export const socialLinks = [
   { label: 'Twitter', href: '#' },
   { label: 'GitHub', href: '#' },
-  { label: 'Email', href: 'mailto:hello@galaxylogic.com' },
+  { label: 'Email', href: 'mailto:ykj2018720@gmail.com' },
   { label: 'Slack', href: '#' },
   { label: 'Youtube', href: '#' },
 ]

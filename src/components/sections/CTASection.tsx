@@ -22,7 +22,6 @@ export function CTASection({
   secondaryLabel,
   secondaryTo,
   imageSrc = '/images/about2.jpg',
-  imageAlt = '',
 }: CTASectionProps) {
   return (
     <section className="section-space bg-brand-page">
@@ -31,17 +30,27 @@ export function CTASection({
           {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
           <h2 className="section-title">{title}</h2>
           <p className="text-base text-brand-secondary md:text-lg">{description}</p>
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <PrimaryButton to={primaryTo}>{primaryLabel}</PrimaryButton>
-            {secondaryLabel && secondaryTo ? (
-              <SecondaryButton to={secondaryTo}>{secondaryLabel}</SecondaryButton>
-            ) : null}
-          </div>
         </div>
 
         {imageSrc ? (
-          <div className="surface-card mt-10 overflow-hidden">
-            <img className="block w-full h-auto" src={imageSrc} alt={imageAlt} />
+          <div className="surface-card relative mt-10 overflow-hidden bg-brand-tint/70 px-4 py-8 md:px-8 md:py-10">
+            <div className="relative mx-auto h-[250px] w-full max-w-3xl md:h-[320px]">
+              <figure className="absolute left-2 top-14 w-[58%] max-w-[390px] -rotate-[7deg] overflow-hidden rounded-2xl border border-brand-border bg-white shadow-[0_14px_40px_rgba(17,24,39,0.14)]">
+                <img
+                  className="block h-full w-full object-contain"
+                  src="/images/restArea.png"
+                  alt="GalaxyLogic office rest area"
+                />
+              </figure>
+
+              <figure className="absolute right-3 top-1 w-[44%] max-w-[290px] rotate-[7deg] overflow-hidden rounded-2xl border border-brand-border bg-white shadow-[0_14px_40px_rgba(17,24,39,0.14)]">
+                <img
+                  className="block h-full w-full object-contain"
+                  src="/images/workArea.png"
+                  alt="GalaxyLogic office work area"
+                />
+              </figure>
+            </div>
           </div>
         ) : null}
       </div>

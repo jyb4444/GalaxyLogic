@@ -31,7 +31,7 @@
   }
 
   a {
-    @apply text-brand-accent underline-offset-2 transition-colors duration-200;
+    @apply cursor-pointer text-brand-accent underline-offset-2 transition-colors duration-200;
   }
 
   a:hover {

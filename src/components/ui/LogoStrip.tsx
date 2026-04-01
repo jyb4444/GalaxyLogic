@@ -14,7 +14,7 @@ export function LogoStrip({ title, logos, className }: LogoStripProps) {
       ) : null}
       <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-xl font-semibold text-brand-text">
         {logos.map((logo, index) => (
-          <span key={`${logo}-${index}`}>{logo}</span>
+          <img className="h-10 w-auto" key={`${logo}-${index}`} src="/images/logo.svg" alt="GalaxyLogic logo" />
         ))}
       </div>
     </section>

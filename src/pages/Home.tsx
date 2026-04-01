@@ -72,9 +72,9 @@ export function Home() {
         title="About GalaxyLogic LLC"
         description="We partner with organizations to build and modernize the software systems that drive their business. Our approach combines technical depth with practical understanding of enterprise operations."
         primaryLabel="Learn more"
-        primaryTo="/about"
+        primaryTo="/"
         secondaryLabel="About"
-        secondaryTo="/about"
+        secondaryTo="/"
         imageSrc="/images/placeholders/office.svg"
         imageAlt="GalaxyLogic discussion session"
       />

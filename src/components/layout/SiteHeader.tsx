@@ -23,8 +23,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-30 border-b border-brand-border bg-brand-tint/95 backdrop-blur-sm">
       <div className="site-container">
         <div className="hidden h-20 items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
-          <Link className="text-3xl font-semibold italic text-brand-text no-underline" to="/">
-            GalaxyLogic
+          <Link className="inline-flex items-center no-underline" to="/" aria-label="GalaxyLogic home">
+            <img className="h-10 w-auto" src="/images/logo.svg" alt="GalaxyLogic logo" />
           </Link>
           <nav aria-label="Primary navigation" className="relative flex items-center gap-8">
             {primaryNavLinks.map((link) => (
@@ -74,11 +74,12 @@ export function SiteHeader() {
           </button>
 
           <Link
-            className="text-2xl font-semibold italic text-brand-text no-underline"
+            className="inline-flex items-center no-underline"
             to="/"
             onClick={closeMenus}
+            aria-label="GalaxyLogic home"
           >
-            GalaxyLogic
+            <img className="h-8 w-auto" src="/images/logo.svg" alt="GalaxyLogic logo" />
           </Link>
         </div>
       </div>

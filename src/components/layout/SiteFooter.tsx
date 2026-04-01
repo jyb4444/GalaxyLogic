@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 export function SiteFooter() {
   const quickLinks = [
-    { label: 'About', to: '/' },
-    { label: 'Services', to: '/services' },
-    { label: 'Contact', to: '/contact' },
+    { label: 'About', to: '/#about-overview' },
+    { label: 'Services', to: '/services#services-top' },
+    { label: 'Contact', to: '/contact#contact-top' },
     { label: 'FAQ', to: '/services#faq' },
   ]
 
@@ -14,8 +14,8 @@ export function SiteFooter() {
       <div className="site-container py-14 md:py-16">
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr] md:gap-12">
           <section className="space-y-4">
-            <Link className="text-4xl font-semibold italic text-brand-text no-underline" to="/">
-              GalaxyLogic
+            <Link className="inline-flex items-center no-underline" to="/" aria-label="GalaxyLogic home">
+              <img className="h-12 w-auto" src="/images/logo.svg" alt="GalaxyLogic logo" />
             </Link>
             <p className="max-w-md text-lg text-brand-secondary">
               Practical career coaching and hands-on support to help you move from planning to
@@ -23,10 +23,10 @@ export function SiteFooter() {
             </p>
             <a
               className="inline-flex items-center gap-2 text-base font-medium text-brand-secondary no-underline hover:text-brand-text"
-              href="mailto:hello@galaxylogic.com"
+              href="mailto:ykj2018720@gmail.com"
             >
               <Mail className="h-4 w-4" aria-hidden="true" />
-              hello@galaxylogic.com
+              ykj2018720@gmail.com
             </a>
           </section>
 
@@ -36,7 +36,7 @@ export function SiteFooter() {
               {quickLinks.map((link) => (
                 <li key={link.to}>
                   <Link
-                    className="text-base font-medium text-brand-secondary no-underline hover:text-brand-text"
+                    className="cursor-pointer text-base font-medium text-brand-secondary no-underline transition-colors duration-200 hover:text-brand-accent focus-visible:text-brand-accent"
                     to={link.to}
                   >
                     {link.label}
