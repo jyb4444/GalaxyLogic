@@ -210,7 +210,7 @@ export function Services() {
                       <span className="text-sm font-medium text-brand-muted">Learn more</span>
                       <Link
                         className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-accent text-white no-underline transition-all duration-300 hover:bg-brand-accent-hover group-hover:translate-x-1"
-                        to="/contact"
+                        to="/contact#contact-methods"
                         aria-label={`Learn more about ${card.title}`}
                       >
                         <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -239,7 +239,7 @@ export function Services() {
             <p className="text-base text-brand-secondary md:text-lg">
               Reach out to our team for a detailed conversation.
             </p>
-            <SecondaryButton to="/contact">Contact</SecondaryButton>
+            <SecondaryButton to="/contact#contact-methods">Contact</SecondaryButton>
           </div>
         </div>
       </section>

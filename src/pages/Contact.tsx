@@ -131,7 +131,7 @@ export function Contact() {
         </div>
       </section>
 
-      <section className="section-space bg-brand-page">
+      <section className="section-space bg-brand-page" id="contact-methods">
         <div className="site-container grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-4 lg:gap-6">
           {contactMethods.map((method) => (
             <ContactMethodCard key={method.title} {...method} />

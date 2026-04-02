@@ -1,6 +1,3 @@
-import { PrimaryButton } from '../ui/PrimaryButton'
-import { SecondaryButton } from '../ui/SecondaryButton'
-
 type CTASectionProps = {
   eyebrow?: string
   title: string
@@ -17,10 +14,6 @@ export function CTASection({
   eyebrow,
   title,
   description,
-  primaryLabel,
-  primaryTo,
-  secondaryLabel,
-  secondaryTo,
   imageSrc = '/images/about2.jpg',
 }: CTASectionProps) {
   return (
