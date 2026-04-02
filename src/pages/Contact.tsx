@@ -11,18 +11,27 @@ import { FormField } from '../components/ui/FormField'
 import { PrimaryButton } from '../components/ui/PrimaryButton'
 import { SectionIntro } from '../components/ui/SectionIntro'
 
-const contactMethods = [
+type ContactMethod = {
+  icon: typeof Mail
+  title: string
+  description: string
+  value: string
+  opensWechatPopup?: boolean
+}
+
+const contactMethods: ContactMethod[] = [
   {
     icon: Mail,
     title: 'Email',
     description: "Send us a message and we'll get back to you promptly.",
-    value: 'ykj2018720@gmail.com',
+    value: 'info@galaxy-logic.com',
   },
   {
     icon: MessageSquare,
     title: 'Live chat',
     description: 'Connect with our team in real time for immediate questions.',
     value: 'Start new chat',
+    opensWechatPopup: true,
   },
   {
     icon: Phone,
@@ -104,6 +113,7 @@ function validateContactForm(values: ContactFormValues): ContactFormErrors {
 export function Contact() {
   const [formValues, setFormValues] = useState<ContactFormValues>(initialFormValues)
   const [formErrors, setFormErrors] = useState<ContactFormErrors>({})
+  const [isWechatPopupOpen, setIsWechatPopupOpen] = useState(false)
   const [submitState, submitToFormspree, resetSubmitState] = useForm('moqgdozg')
 
   function clearFieldError(field: keyof ContactFormValues) {
@@ -134,10 +144,49 @@ export function Contact() {
       <section className="section-space bg-brand-page" id="contact-methods">
         <div className="site-container grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-4 lg:gap-6">
           {contactMethods.map((method) => (
-            <ContactMethodCard key={method.title} {...method} />
+            <ContactMethodCard
+              key={method.title}
+              {...method}
+              valueAsButton={Boolean(method.opensWechatPopup)}
+              onValueClick={method.opensWechatPopup ? () => setIsWechatPopupOpen(true) : undefined}
+            />
           ))}
         </div>
       </section>
+
+      {isWechatPopupOpen ? (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="wechat-popup-title"
+          onClick={() => setIsWechatPopupOpen(false)}
+        >
+          <div
+            className="w-full max-w-sm rounded-2xl border border-brand-border bg-white p-5 shadow-xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <h3 className="subsection-title text-[24px]" id="wechat-popup-title">
+              WeChat Consultation
+            </h3>
+            <p className="mt-2 text-sm text-brand-secondary">Scan the QR code to start a chat.</p>
+            <img
+              className="mx-auto mt-4 h-56 w-56 rounded-lg border border-brand-border object-cover"
+              src="/images/wechat.jpg"
+              alt="GalaxyLogic WeChat QR code"
+            />
+            <div className="mt-5 flex justify-end">
+              <button
+                className="inline-flex cursor-pointer items-center justify-center rounded-lg border border-brand-border px-4 py-2 text-sm font-semibold text-brand-text transition-colors duration-200 hover:bg-brand-tint"
+                type="button"
+                onClick={() => setIsWechatPopupOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <section className="section-space bg-brand-page">
         <div className="site-container grid gap-10 lg:grid-cols-[1fr_1.5fr]">

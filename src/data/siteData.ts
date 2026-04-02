@@ -31,11 +31,11 @@ export const footerColumns = [
 ]
 
 export const socialLinks = [
-  { label: 'Twitter', href: '#' },
-  { label: 'GitHub', href: '#' },
-  { label: 'Email', href: 'mailto:ykj2018720@gmail.com' },
-  { label: 'Slack', href: '#' },
-  { label: 'Youtube', href: '#' },
+  { label: "Twitter", href: "#" },
+  { label: "GitHub", href: "#" },
+  { label: "Email", href: "mailto:info@galaxy-logic.com" },
+  { label: "Slack", href: "#" },
+  { label: "Youtube", href: "#" },
 ]
 
 export const homeCoreServices = [
